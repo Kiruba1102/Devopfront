@@ -1,23 +1,23 @@
 import logo from './logo.svg';
 import './App.css';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Header from './payrollproject/Components/Header';
+import Employee from './payrollproject/Components/Employee';
+import Salary from './payrollproject/Components/Salary';
+import Salaryfindall from './payrollproject/Components/Salaryfindall';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <Router>
+        <Routes>
+        <Route exact path="/" element={<Header />}></Route>
+          <Route exact path="/emp" element={<Employee />}></Route>
+          <Route exact path="/sal" element={< Salary/>}></Route>
+          <Route exact path="/salfind" element={<Salaryfindall />}></Route>
+          
+        </Routes>
+      </Router>
     </div>
   );
 }
